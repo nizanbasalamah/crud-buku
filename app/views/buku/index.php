@@ -11,18 +11,24 @@
             </form>
         </div>
     </div>
+    <div class="row mb-3 justify-content-center">
+        <div class="col-md-6">
+            <?= Flasher::flash(); ?>
+            <a href="<?= BASEURL ?>buku/tambah" class="btn btn-primary">Add New Book</a>
+        </div>
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <ul class="list-group ">
-                <?php foreach ($data["buku"] as $row) :?>
-                <li class="list-group-item">
-                    <?= $row["judul"]; ?>
-                    <a href="#" class="badge badge-danger badge-pill float-right ml-1">delete</a>
-                    <a href="#" class="badge badge-primary badge-pill float-right ml-1">update</a>
-                    <a href="<?= BASEURL ?>buku/detail/<?= $row["id"]; ?>"
-                        class="badge badge-info badge-pill float-right ml-1">detail</a>
-                </li>
+                <?php foreach ($data["buku"] as $row) : ?>
+                    <li class="list-group-item">
+                        <?= $row["judul"]; ?>
+                        <a href="#" class="badge badge-danger badge-pill float-right ml-1">delete</a>
+                        <a href="#" class="badge badge-primary badge-pill float-right ml-1">update</a>
+                        <a href="<?= BASEURL ?>buku/detail/<?= $row["id"]; ?>" class="badge badge-info badge-pill float-right ml-1">detail</a>
+                    </li>
                 <?php endforeach; ?>
+            </ul>
         </div>
     </div>
 </div>
